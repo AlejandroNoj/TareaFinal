@@ -1,0 +1,6 @@
+﻿  pilacolaestatica.cpp
+c:\users\alejandro\desktop\proyecto1_pilacolaestatica\proyecto1_pilacolaestatica\pilacolaestatica.cpp(56): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\alejandro\desktop\proyecto1_pilacolaestatica\proyecto1_pilacolaestatica\pilacolaestatica.cpp(209): warning C4101: 'dato': unreferenced local variable
+c:\users\alejandro\desktop\proyecto1_pilacolaestatica\proyecto1_pilacolaestatica\pilacolaestatica.cpp(211): warning C4101: 'x': unreferenced local variable
+  Proyecto1_PilaColaEstatica.vcxproj -> C:\Users\Alejandro\Desktop\Proyecto1_PilaColaEstatica\Debug\Proyecto1_PilaColaEstatica.exe
+  Proyecto1_PilaColaEstatica.vcxproj -> C:\Users\Alejandro\Desktop\Proyecto1_PilaColaEstatica\Debug\Proyecto1_PilaColaEstatica.pdb (Partial PDB)
