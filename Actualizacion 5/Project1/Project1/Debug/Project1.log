@@ -1,0 +1,7 @@
+﻿  Source.cpp
+c:\users\aleja\documents\universidad\programacion\actualizacion 5\project1\project1\source.cpp(68): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\aleja\documents\universidad\programacion\actualizacion 5\project1\project1\source.cpp(221): warning C4101: 'dato': unreferenced local variable
+c:\users\aleja\documents\universidad\programacion\actualizacion 5\project1\project1\source.cpp(223): warning C4101: 'x': unreferenced local variable
+c:\users\aleja\documents\universidad\programacion\actualizacion 5\project1\project1\source.cpp(648): warning C4101: 'dato': unreferenced local variable
+c:\users\aleja\documents\universidad\programacion\actualizacion 5\project1\project1\source.cpp(650): warning C4101: 'x': unreferenced local variable
+  Project1.vcxproj -> C:\Users\aleja\Documents\Universidad\Programacion\Actualizacion 5\Project1\Debug\Project1.exe
