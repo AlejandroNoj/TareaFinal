@@ -1,0 +1,12 @@
+﻿  Source.cpp
+c:\users\kevin\documents\project1\project1\source.cpp(68): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+c:\users\kevin\documents\project1\project1\source.cpp(221): warning C4101: 'dato': variable local sin referencia
+c:\users\kevin\documents\project1\project1\source.cpp(223): warning C4101: 'x': variable local sin referencia
+c:\users\kevin\documents\project1\project1\source.cpp(648): warning C4101: 'dato': variable local sin referencia
+c:\users\kevin\documents\project1\project1\source.cpp(650): warning C4101: 'x': variable local sin referencia
+c:\users\kevin\documents\project1\project1\source.cpp(1580): warning C4101: 'res': variable local sin referencia
+c:\users\kevin\documents\project1\project1\source.cpp(1583): warning C4101: 'n': variable local sin referencia
+c:\users\kevin\documents\project1\project1\source.cpp(1682): warning C4018: '<': no coinciden signed/unsigned
+c:\users\kevin\documents\project1\project1\source.cpp(1751): warning C4715: 'eliminar': no todas las rutas de acceso de control devuelven un valor
+  project1.vcxproj -> C:\Users\KEVIN\Documents\project1\Debug\project1.exe
+  project1.vcxproj -> C:\Users\KEVIN\Documents\project1\Debug\project1.pdb (Full PDB)
