@@ -1759,6 +1759,128 @@ void flush()
 	fflush(stdout);
 }
 /*fintablahash*/
+/*algoritmo warshall*/
+//Variables Globales
+int numalgo = 0;
+int **ady;
+int opalgoritmo = 0;
+
+//Funciones
+void gotoxy(int, int);
+void matriz();
+int Warshall(int, int, int);
+//Funcion principal
+
+void Menualgo() {
+	system("cls");
+	gotoxy(16, 9); cout << "|-----------------------------------Menu Principal-----------------------------------|" << endl;
+	gotoxy(16, 10); cout << "|                                                                                    |" << endl;
+	gotoxy(16, 11); cout << "| Ingresar Nueva Matriz __________________________________________________________ 1 |" << endl;
+	gotoxy(16, 12); cout << "| Salir __________________________________________________________________________ 2 |" << endl;
+	gotoxy(16, 13); cout << "|                                                                                    |" << endl;
+	gotoxy(16, 14); cout << "| Opcion:                                                                            |" << endl;
+	gotoxy(16, 15); cout << "|                                                                                    |" << endl;
+	gotoxy(16, 16); cout << "|------------------------------------------------------------------------------------|" << endl;
+	gotoxy(27, 14); cin >> opalgoritmo;
+
+	do {
+		switch (opalgoritmo)
+		{
+		case 1:
+			matriz();
+			system("pause");
+			Menualgo();
+			break;
+
+		case 2:
+			gotoxy(16, 18); cout << "Gracias por utilizar el algoritmo de Warshall" << endl;
+			gotoxy(16, 20); system("pause");
+			exit(0);
+			break;
+
+		default:
+			gotoxy(16, 18); cout << "Lo siento, no he comprendido tu comando, intentalo nuevamente" << endl;
+			gotoxy(16, 20); system("pause");
+			Menualgo();
+			break;
+		}
+	} while (opalgoritmo != 2);
+
+}
+
+//Funcion de llenado de matriz
+void matriz() {
+	system("cls");
+	cout << "Para ingresar el tamanio de la matriz solo es necesario colocar un numero (Ej. 3, el cual equivale a una matriz de 3x3)" << endl;
+	cout << "Ingrese el Tamanio de la matriz: ";
+	cin >> numalgo;
+	cout << endl;
+	cout << endl;
+	cout << "NOTA: El algoritmo de Warshall trabaja unicamente con 0s y 1s, donde 0 indica que no existe relacion entre los nodos y 1 indica que si existe relacion entre los nodos." << endl;
+	cout << endl;
+
+	//Proceso para la creacion de la matriz ady
+	ady = new int*[numalgo]; //ady es igual un nuevo valor de entero n
+	for (int i = 0; i <= numalgo; i++) {
+		ady[i] = new int[numalgo]; //ady en la posicion [i] es igual a un nuevo entero n
+	}
+	ady[numalgo][numalgo]; //se crea una matriz de tamanio ady[n][n], la cual es una matriz cuadratico de tamanio n
+
+			   //Proceso para el llenado de la matriz ady
+	for (int f = 0; f < numalgo; f++) { //para un entero f ("fila") igual 0, menor o igual que n, f incrementa de 1 en 1
+		for (int c = 0; c < numalgo; c++) { //para un entero c ("columna") igual a 0, menor o igual que n, c incrementa de 1 en 1
+			cout << "Ingrese los datos de la posicion [ " << f << " ][ " << c << " ]: ";
+			cin >> ady[f][c]; //Se ingresa el valor deseado (0 o 1) en la posicion i, j
+		}
+	}
+
+	cout << endl;
+	cout << endl;
+	cout << "|--------------------------------------MATRIZ DE ADYACENCIA--------------------------------------|" << endl;
+	cout << endl;
+	//Proceso para el mostreo de la matriz de adyacencia
+	for (int i = 0; i < numalgo; i++) {
+		for (int j = 0; j < numalgo; j++) {
+			cout << "|   " << ady[i][j] << "   |";
+		}
+		cout << endl;
+	}
+
+	//Proceso para la conversion de la matriz de adyacencia
+	for (int k = 0; k <= numalgo - 1; k++) {
+		for (int i = 0; i <= numalgo - 1; i++) {
+			for (int j = 0; j <= numalgo - 1; j++) {
+				ady[i][j] = Warshall(i, j, k);
+			}
+		}
+	}
+
+	system("pause");
+	cout << endl;
+	cout << endl;
+	cout << "|--------------------------------------MATRIZ DE CLAUSURA TRANSITIVA--------------------------------------|" << endl;
+	cout << endl;
+	//Proceso para el mostreo de la matriz de clausura transitiva
+	for (int i = 0; i < numalgo; i++) {
+		for (int j = 0; j < numalgo; j++) {
+			cout << "|   " << ady[i][j] << "   |";
+		}
+		cout << endl;
+	}
+}
+
+//Funcion que realiza el algoritmo de Warshall
+int Warshall(int i, int j, int k) {
+	if ((ady[i][j] == 1) || (ady[i][k] == 1) && (ady[k][j] == 1)) { //Si la matriz ady en la posicion i, j es igual a 1 o en la posicion i, k es igual a 1 pero ademas en la posicion k, j es igual a 1
+		return 1;
+		 //entonces duevuelve el valor 1
+	}
+	else {
+		return 0;
+		 //de lo contrario retorna un 0
+	}
+}
+/*fin algoritmo*/
 int main() {
 	system("color F1");
 	int opcion = 0;
@@ -1773,7 +1895,8 @@ int main() {
 		gotoxy(25, 12); cout << "       4. LISTAS										   " << endl;
 		gotoxy(25, 13); cout << "       5. TABLAS HASH										   " << endl;
 		gotoxy(25, 14); cout << "       6. TABLA HASH DE ESTUDIANTE                        " << endl;
-		gotoxy(25, 15); cout << "       7. SALIR                                           " << endl;
+		gotoxy(25, 15); cout << "       7. ALGORITMO DE WARSHALL                           " << endl;
+		gotoxy(25, 16); cout << "       8. SALIR                                           " << endl;
 		gotoxy(25, 18); cout << "INGRESE UNA OPCION : [   ] ";
 		gotoxy(48, 18); cin >> opcion;
 		switch (opcion)
@@ -1804,10 +1927,14 @@ int main() {
 			break;
 		case 7:
 			system("cls");
+			Menualgo();
+			break;
+		case 8:
+			system("cls");
 			exit(0);
 			break;
 		}
-	} while (opcion != 8);
+	} while (opcion != 9);
 
 	system("pause");
 }
